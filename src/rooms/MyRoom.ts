@@ -36,7 +36,7 @@ export class MyRoom extends Room<MyRoomState> {
     
     this.onMessage("selectedItem", (client, data) => {
       console.log('selectedItem',data.itemID);
-      delete this.state.items[data.itemID];
+      this.state.items.delete(data.itemID);
     });   
 
   }
