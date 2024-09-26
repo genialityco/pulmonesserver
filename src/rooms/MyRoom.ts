@@ -32,6 +32,12 @@ export class MyRoom extends Room<MyRoomState> {
       player.x = data.x;
       player.y = data.y;
       player.z = data.z;
+      if (data.rotx)
+      player.rotx = data.rotx;
+      if (data.roty)
+        player.roty = data.roty;
+      if (data.rotz)
+        player.rotz = data.rotz;      
     }); 
 
     this.onMessage("updateName", (client, data) => {

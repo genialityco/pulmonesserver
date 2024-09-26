@@ -6,6 +6,12 @@ export class Player extends Schema {
     @type("number") x: number;
     @type("number") y: number;
     @type("number") z: number;
+    @type("number") rotx: number;
+    @type("number") roty: number;
+    @type("number") rotz: number;
+
+
+
 }
 
 export class Item extends Schema {
