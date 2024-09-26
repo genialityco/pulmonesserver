@@ -19,6 +19,7 @@ export class MyRoom extends Room<MyRoomState> {
 
       this.state.items.set(String(i), item);
     }
+    console.log('reiniciando el estado');
 
 
     this.onMessage("type", (client, message) => {
@@ -47,7 +48,11 @@ export class MyRoom extends Room<MyRoomState> {
     
     this.onMessage("selectedItem", (client, data) => {
       console.log('selectedItem',data.itemID);
-      this.state.items.delete(data.itemID);
+      
+      
+      console.log('borro',this.state.items.delete(data.itemID));
+      console.log('borro',this.state.items.delete((String(data.itemID))),this.state.items);
+
     });   
 
   }
@@ -70,7 +75,7 @@ export class MyRoom extends Room<MyRoomState> {
 
   onLeave (client: Client, consented: boolean) {
     console.log(client.sessionId, "left!");
-    this.state.players.delete(client.sessionId);
+    console.log('borro',this.state.players.delete(client.sessionId));
   }
 
   onDispose() {
