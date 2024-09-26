@@ -33,6 +33,11 @@ export class MyRoom extends Room<MyRoomState> {
       player.y = data.y;
       player.z = data.z;
     }); 
+
+    this.onMessage("updateName", (client, data) => {
+      const player = this.state.players.get(client.sessionId);
+      player.name = data.name;
+    });     
     
     this.onMessage("selectedItem", (client, data) => {
       console.log('selectedItem',data.itemID);
