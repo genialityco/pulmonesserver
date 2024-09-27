@@ -25,4 +25,5 @@ export class Item extends Schema {
 export class MyRoomState extends Schema {
   @type({ map: Player }) players = new MapSchema<Player>();
   @type({ map: Item }) items = new MapSchema<Item>();
+  @type("number") itemsLength = 0;
 }
