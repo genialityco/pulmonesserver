@@ -2,16 +2,17 @@ import { Room, Client } from "@colyseus/core";
 import { MyRoomState, Player, Item } from "./schema/MyRoomState";
 
 const FLOOR_SIZE = 4;
-const CELLS_NUMBER = 100;
+const INITIAL_CELLS_NUMBER = 100;
 export class MyRoom extends Room<MyRoomState> {
   maxClients = 4;
+  cells_number = INITIAL_CELLS_NUMBER;
 
   //Agregamos CELLS_NUMBER numero de items para recoger en el juego al inicio
   resetItemsState() {
     //trackeamos la cantidad de elementos por separado para poder determinar cuando se gana
     //esperando los elementos de items uno a uno, no se puede calcular por lo que llegan de a uno
-    this.state.itemsLength = CELLS_NUMBER;
-    for (let i = 0; i < CELLS_NUMBER; i++) {
+    this.state.itemsLength =  this.cells_number;
+    for (let i = 0; i < this.cells_number; i++) {
       const item = new Item();
       item.x = -(FLOOR_SIZE / 2) + Math.random() * FLOOR_SIZE;
       item.y = 1.031;
