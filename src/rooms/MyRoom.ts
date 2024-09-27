@@ -2,7 +2,7 @@ import { Room, Client } from "@colyseus/core";
 import { MyRoomState, Player, Item } from "./schema/MyRoomState";
 
 const FLOOR_SIZE = 4;
-const CELLS_NUMBER = 10;
+const CELLS_NUMBER = 50;
 export class MyRoom extends Room<MyRoomState> {
   maxClients = 4;
 
