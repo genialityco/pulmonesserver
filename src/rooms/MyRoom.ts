@@ -34,6 +34,7 @@ export class MyRoom extends Room<MyRoomState> {
       //
     });
 
+    
     this.onMessage("updatePosition", (client, data) => {
       const player = this.state.players.get(client.sessionId);
       player.x = data.x;
