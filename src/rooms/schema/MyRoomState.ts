@@ -8,7 +8,7 @@ export class Player extends Schema {
     @type("number") z: number;
     @type("number") rotx: number;
     @type("number") roty: number;
-    @type("number") rotz: number;
+    @type("number") rotz: number; 
 
 
 
